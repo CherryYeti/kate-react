@@ -8,7 +8,7 @@ const Header:React.FC = () => {
         </p>
       </div>
       <div className="w-32 rounded-full overflow-hidden border-2">
-        <img src="kate.png" alt="Profile" />
+        <img src="kate.webp" alt="Profile" />
       </div>
     </div>
   );

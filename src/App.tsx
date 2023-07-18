@@ -30,15 +30,15 @@ const App:React.FC = () => {
         <Photos />
         <Images
           images={[
-            "/gallery/castle-conway.jpg",
-            "/gallery/fish.jpg",
-            "/gallery/ruins.jpg",
-            "/gallery/fingerpaint.jpg",
-            "/gallery/kj.jpg",
-            "/gallery/naptime.jpg",
-            "/gallery/freddie.jpg",
-            "/gallery/pitching.jpg",
-            "/gallery/giants-night.jpg",
+            "/gallery/castle-conway.webp",
+            "/gallery/fish.webp",
+            "/gallery/ruins.webp",
+            "/gallery/fingerpaint.webp",
+            "/gallery/kj.webp",
+            "/gallery/naptime.webp",
+            "/gallery/freddie.webp",
+            "/gallery/pitching.webp",
+            "/gallery/giants-night.webp",
           ]}
         />
       </MainLayout>
