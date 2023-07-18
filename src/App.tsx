@@ -45,6 +45,6 @@ const App:React.FC = () => {
       <Footer />
     </div>
   );
-}
+};
 
 export default App;

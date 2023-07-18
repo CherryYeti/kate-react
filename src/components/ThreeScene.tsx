@@ -41,7 +41,6 @@ const ThreeScene: React.FC = () => {
       },
       undefined,
       (error) => {
-        // eslint-disable-next-line no-console
         console.error("Error loading GLB file:", error);
       }
     );
@@ -63,7 +62,7 @@ const ThreeScene: React.FC = () => {
         rendererRef.current.dispose();
       }
     };
-  }, []); // No dependencies to avoid unnecessary re-renders
+  }, []);
 
   return <div className="flex justify-center" ref={sceneRef} />;
 };
