@@ -12,7 +12,7 @@ const Images:React.FC<ImagesProps> = ({ images }: ImagesProps) => {
           <img
             key={index}
             src={item}
-            alt="f"
+            alt={item}
             className="w-full md:w-auto"
           ></img>
         ))}
