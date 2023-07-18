@@ -11,7 +11,7 @@ import ThreeScene from "./components/ThreeScene";
 import Title from "./components/Title";
 import WorkBio from "./components/sections/WorkBio";
 
-function App() {
+const App:React.FC = () => {
   return (
     <div className="text-white">
       <Navbar />

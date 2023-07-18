@@ -1,6 +1,6 @@
 import { BsDownload } from "react-icons/bs";
 
-const NavBar = () => {
+const NavBar:React.FC = () => {
   return (
     <nav className="sticky top-0 bg-[#343333] bg-opacity-40 backdrop-filter backdrop-blur-sm backdrop-saturate-400">
       <ul className="list-none m-0 p-0 overflow-hidden">

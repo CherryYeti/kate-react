@@ -2,12 +2,14 @@ import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
-const ThreeScene = () => {
+const ThreeScene: React.FC = () => {
   const sceneRef = useRef<HTMLDivElement | null>(null);
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
 
   useEffect(() => {
-    if (sceneRef.current === null) return;
+    const sceneElement = sceneRef.current;
+
+    if (!sceneElement) return;
     let model: THREE.Object3D | undefined;
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(15, 512 / 512, 0.1, 1000);
@@ -20,7 +22,7 @@ const ThreeScene = () => {
     camera.rotation.set(-Math.PI / 6, 0, 0);
     const renderer = new THREE.WebGLRenderer({ alpha: true });
     renderer.setSize(256, 256);
-    sceneRef.current.appendChild(renderer.domElement);
+    sceneElement.appendChild(renderer.domElement);
 
     const loader = new GLTFLoader();
     loader.load(
@@ -39,14 +41,16 @@ const ThreeScene = () => {
       },
       undefined,
       (error) => {
+        // eslint-disable-next-line no-console
         console.error("Error loading GLB file:", error);
       }
     );
-    const animate = () => {
+
+    const animate = (): void => {
       if (model) {
         model.rotation.y += 0.002;
       }
-      renderer.render(scene, camera);
+      rendererRef.current?.render(scene, camera);
       requestAnimationFrame(animate);
     };
 
@@ -54,12 +58,12 @@ const ThreeScene = () => {
     animate();
 
     return () => {
-      if (sceneRef.current !== null && rendererRef.current !== null) {
-        sceneRef.current.removeChild(rendererRef.current.domElement);
+      if (sceneElement && rendererRef.current) {
+        sceneElement.removeChild(rendererRef.current.domElement);
         rendererRef.current.dispose();
       }
     };
-  }, []);
+  }, []); // No dependencies to avoid unnecessary re-renders
 
   return <div className="flex justify-center" ref={sceneRef} />;
 };

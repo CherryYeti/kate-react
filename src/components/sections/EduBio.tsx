@@ -1,4 +1,4 @@
-const EduBio = () => {
+const EduBio:React.FC = () => {
   return (
     <div>
       <div className="flex items-start">

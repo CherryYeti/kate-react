@@ -1,6 +1,6 @@
 import { BsLinkedin } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
-const Socials = () => {
+const Socials:React.FC = () => {
   return (
     <>
       <div className="mt-2 origin-top-left transition-all duration-300 hover:scale-105 hover:text-[#62cdfe]">

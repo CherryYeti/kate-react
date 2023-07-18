@@ -1,13 +1,13 @@
 interface ImagesProps {
   images: Array<string>;
 }
-const Images = ({ images }: ImagesProps) => {
+const Images:React.FC<ImagesProps> = ({ images }: ImagesProps) => {
   const splitIndex = Math.ceil(images.length / 2);
   const firstHalf = images.slice(0, splitIndex);
   const secondHalf = images.slice(splitIndex);
   return (
     <div className="flex flex-wrap justify-center mb-8">
-      <div className="w-full md:w-1/2 flex flex-wrap">
+      <div className="w-full md:w-1/2 fleWx flex-wrap">
         {firstHalf.map((item, index) => (
           <img
             key={index}
